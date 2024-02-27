@@ -61,7 +61,7 @@ export default function Home() {
             <p className="joke">Loading...</p>
           ) : (
         
-              <p className="joke">&rsquo;{joke}&ldquo;</p>
+              <p className="joke">&rdquo;{joke}&ldquo;</p>
           
           )}
           <div className="flex justify-center md:justify-normal py-4">
