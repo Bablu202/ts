@@ -1,24 +1,16 @@
 import { NextPage } from "next";
 
-import { useEffect, useState } from "react";
 import useSWR from "swr";
 
 const Count: NextPage = () => {
-  const [dataVisitors, setDataVisitors] = useState<number>();
-  const fetcher = (url: string) => fetch(url).then((data) => data.json());
-  const { data, error } = useSWR("/api/visitors", fetcher);
+  const fetcher = (url: string) => fetch(url).then((r) => r.json());
 
-  let visCou: Number;
-  const handleUpdate = async () => {
-    const id = 1;
-    const data = await fetch(`/api/visitors?${id}`, {
-      method: "put",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ count: 90 }),
-    });
-  };
-  handleUpdate();
-
-  return <p>{dataVisitors}</p>;
+  const { data, error, isLoading } = useSWR("/api/visitors", fetcher);
+  if (!isLoading) {
+    console.log("is Loading ...");
+    if (data) console.log(data.json());
+    else console.log("Error 5 " + error);
+  }
+  return <p>here</p>;
 };
 export { Count };

@@ -37,7 +37,7 @@ export default function Home() {
 
   useEffect(() => {
     getResponse();
-  }, []);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <div className="flex flex-col h-screen justify-between">
@@ -61,7 +61,7 @@ export default function Home() {
           {isLoading ? (
             <p className="joke">Loading...</p>
           ) : (
-            <p className="joke">"{joke}"</p>
+            <p className="joke">&ldquo;{joke}&rdquo;</p>
           )}
 
           <div className="flex justify-center md:justify-normal py-4">
