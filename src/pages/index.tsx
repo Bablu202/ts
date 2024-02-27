@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import imgLogo from "../images/w-s.png";
 import man from "../images/man.png";
+import { Count } from "./api/Count";
 
 interface JokeResponse {
   value: string;
@@ -60,9 +61,7 @@ export default function Home() {
           {isLoading ? (
             <p className="joke">Loading...</p>
           ) : (
-        
-              <p className="joke">&rdquo;{joke}&ldquo;</p>
-          
+            <p className="joke">&rdquo;{joke}&ldquo;</p>
           )}
           <div className="flex justify-center md:justify-normal py-4">
             <button
@@ -75,7 +74,10 @@ export default function Home() {
         </div>
       </div>
       <footer className="border-t-black/40 border-[1px] py-4 text-center ">
-        <p>Number of Visitors are</p>
+        <div className="flex flex-r justify-center">
+          <p>Number of Visitors are </p>
+          <Count />
+        </div>
       </footer>
     </div>
   );
