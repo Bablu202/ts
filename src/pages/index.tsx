@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import imgLogo from "../images/w-s.png";
 import man from "../images/man.png";
-import { Count } from "./api/Count";
 
 interface JokeResponse {
   value: string;
@@ -79,7 +78,6 @@ export default function Home() {
       <footer className="border-t-black/40 border-[1px] py-4 text-center ">
         <p>Number of Visitors are</p>
       </footer>
-      <Count />
     </div>
   );
 }
