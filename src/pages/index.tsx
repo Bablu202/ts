@@ -61,11 +61,9 @@ export default function Home() {
           {isLoading ? (
             <p className="joke">Loading...</p>
           ) : (
-            <p className="joke">
-              <span>&ldquo;</span>
-              {joke}
-              <span>&rdquo;</span>
-            </p>
+            /* eslint-disable-next-line react/no-unescaped-entities */
+
+            <p className="joke">&ldquo;{joke}&rdquo;</p>
           )}
 
           <div className="flex justify-center md:justify-normal py-4">
