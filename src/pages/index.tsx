@@ -62,7 +62,7 @@ export default function Home() {
             <p className="joke">Loading...</p>
           ) : (
             <div>
-              <p className="joke">{joke}</p>
+              <p className="joke">"{joke}"</p>
             </div>
           )}
 
