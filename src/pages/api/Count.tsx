@@ -39,7 +39,7 @@ const Count: NextPage = () => {
   };
   useEffect(() => {
     if (data) {
-      setDataVisitors(data.count);
+      setDataVisitors: Number(data.count);
     }
     if (error) {
       console.error("Error fetching data:", error);
