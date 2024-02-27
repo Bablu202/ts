@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import useSWR from "swr";
 
 const Count: NextPage = () => {
-  const [dataVisitors, setDataVisitors] = useState<number>();
+  const [dataVisitors, setDataVisitors] = useState<number>(0);
   const fetcher = (url: string) => fetch(url).then((data) => data.json());
   const { data, error, isLoading, mutate } = useSWR("/api/visitors", fetcher);
 
@@ -39,7 +39,7 @@ const Count: NextPage = () => {
   };
   useEffect(() => {
     if (data) {
-      setDataVisitors: Number(data.count);
+      setDataVisitors(data.count);
     }
     if (error) {
       console.error("Error fetching data:", error);
