@@ -67,7 +67,7 @@ export default function Home() {
           <div className="flex justify-center md:justify-normal py-4">
             <button
               onClick={handleJoke}
-              className="bottom-16 fixed font-semibold tracking-wider bg-black text-white px-4 py-2 rounded-md hover:bg-gray-600 inline md:hidden"
+              className="bottom-16  font-semibold tracking-wider bg-black text-white px-4 py-2 rounded-md hover:bg-gray-600 inline md:hidden"
             >
               Make me Laugh..
             </button>
