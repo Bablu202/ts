@@ -60,9 +60,9 @@ export default function Home() {
           {isLoading ? (
             <p className="joke">Loading...</p>
           ) : (
-            <div>
+        
               <p className="joke">{joke}</p>
-            </div>
+          
           )}
           <div className="flex justify-center md:justify-normal py-4">
             <button
