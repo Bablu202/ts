@@ -64,14 +64,15 @@ export default function Home() {
               <p className="joke">"{joke}"</p>
             </div>
           )}
-
           <div className="flex justify-center md:justify-normal py-4">
-            <button
-              onClick={handleJoke}
-              className="mt-20  font-semibold tracking-wider bg-black text-white px-4 py-2 rounded-md hover:bg-gray-600 inline md:hidden"
-            >
-              Make me Laugh..
-            </button>
+            {!isLoading && (
+              <button
+                onClick={handleJoke}
+                className="mt-20  font-semibold tracking-wider bg-black text-white px-4 py-2 rounded-md hover:bg-gray-600 inline md:hidden"
+              >
+                Make me Laugh..
+              </button>
+            )}
           </div>
         </div>
       </div>
