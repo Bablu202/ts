@@ -56,7 +56,7 @@ export default function Home() {
           </button>
         </div>
 
-        <div className="px-5 mt-5 flex flex-1 flex-col justify-center ">
+        <div className="px-5 mt-5 mb-5 flex flex-1 flex-col justify-center ">
           {isLoading ? (
             <p className="joke">Loading...</p>
           ) : (
@@ -65,14 +65,12 @@ export default function Home() {
             </div>
           )}
           <div className="flex justify-center md:justify-normal py-4">
-            {!isLoading && (
-              <button
-                onClick={handleJoke}
-                className="mt-20  font-semibold tracking-wider bg-black text-white px-4 py-2 rounded-md hover:bg-gray-600 inline md:hidden"
-              >
-                Make me Laugh..
-              </button>
-            )}
+            <button
+              onClick={handleJoke}
+              className="bottom-16 fixed font-semibold tracking-wider bg-black text-white px-4 py-2 rounded-md hover:bg-gray-600 inline md:hidden"
+            >
+              Make me Laugh..
+            </button>
           </div>
         </div>
       </div>
