@@ -45,7 +45,7 @@ export default function Home() {
         <h3 className="font-semibold text-xl ml-auto ">Here we go..!</h3>
       </div>
 
-      <div className="flex flex-1 flex-col items-center max-w-3xl w-full mx-auto md:flex-row ">
+      <div className="flex flex-1 flex-col items-center max-w-3xl w-full mx-auto md:flex-row  ">
         <div>
           <Image width={220} height={180} priority src={man} alt={"man"} />
           <button
@@ -61,7 +61,7 @@ export default function Home() {
             <p className="joke">Loading...</p>
           ) : (
             <div>
-              <p className="joke">"{joke}"</p>
+              <p className="joke">{joke}</p>
             </div>
           )}
           <div className="flex justify-center md:justify-normal py-4">
