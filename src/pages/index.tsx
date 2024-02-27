@@ -56,7 +56,7 @@ export default function Home() {
           </button>
         </div>
 
-        <div className="px-5 mt-5 mb-5 flex flex-1 flex-col justify-center ">
+        <div className="px-5 m-5  flex flex-1 flex-col justify-center ">
           {isLoading ? (
             <p className="joke">Loading...</p>
           ) : (
