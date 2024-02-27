@@ -37,8 +37,8 @@ export default function Home() {
 
   useEffect(() => {
     getResponse();
-  }, []); // eslint-disable-line react-hooks/exhaustive-deps
-
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
   return (
     <div className="flex flex-col h-screen justify-between">
       <div className="m-2 flex  p-4">
@@ -61,7 +61,6 @@ export default function Home() {
           {isLoading ? (
             <p className="joke">Loading...</p>
           ) : (
-            /* eslint-disable-next-line react/no-unescaped-entities */
             <div>
               <p className="joke">{joke}</p>
             </div>
