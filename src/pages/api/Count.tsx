@@ -19,7 +19,7 @@ const Count: NextPage = () => {
     }
     const data = await response.json();
     console.log(data);
-    const updatedCount = data.count + 1;
+    let updatedCount = data.count + 1;
     const updateResponse = await fetch(`/api/visitors?id=${id}`, {
       method: "PUT",
       headers: {
