@@ -10,31 +10,15 @@ const Count: NextPage = () => {
 
   const handleVisitorUpdate = async () => {
     const id = 1;
-    const response = await fetch(`/api/visitors?id=${id}`);
-    console.log("started");
 
-    if (!response.ok) {
-      console.error("Error fetching data:", response.statusText);
-      return;
-    }
-    const data = await response.json();
-    console.log(data);
-    const updatedCount = data.count + 1;
     const updateResponse = await fetch(`/api/visitors?id=${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ count: updatedCount }),
+      body: JSON.stringify(visitors}),
     });
-    if (!updateResponse.ok) {
-      console.error("Error updating count:", updateResponse.statusText);
-      return;
-    }
-
-    return updateResponse.json();
-
-    // Optionally, you can refetch the data to ensure it's up to date
+ 
     mutate();
   };
   useEffect(() => {
