@@ -13,7 +13,7 @@ export default async function handler(
     });
     res.status(200).json(visitors);
   }
-  //res.status(200).json({ id: 1 });
+  // res.status(200).json({ id: 1 });
 
   if (req.method === "PUT") {
     const id = req.query.id;
@@ -21,9 +21,8 @@ export default async function handler(
 
     const visitors = await prisma.visitors.update({
       where: { id: 1 },
-      data: { count: {increment:1 },
+      data: { count: count },
     });
     res.status(200).json(visitors);
   }
 }
-export {handler}
