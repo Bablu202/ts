@@ -9,7 +9,7 @@
 //}
 generator client {
   provider = "prisma-client-js"
-  output   = "./generated/client"
+  output   = "../src/pages/api/visitors"
 }
 
 datasource db {
