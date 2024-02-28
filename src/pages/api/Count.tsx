@@ -49,6 +49,6 @@ const Count: NextPage = () => {
   useEffect(() => {
     handleVisitorUpdate();
   }, []);
-  return <p>{!isLoading ? " - " + data.count : "Loading..."}</p>;
+  return <p>{!isLoading ? " - " + dataVisitors : "Loading..."}</p>;
 };
 export { Count };
