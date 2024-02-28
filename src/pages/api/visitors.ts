@@ -21,7 +21,7 @@ export default async function handler(
 
     const visitors = await prisma.visitors.update({
       where: { id: 1 },
-      data: { count: count },
+      data: { count: {increment:1 },
     });
     res.status(200).json(visitors);
   }
