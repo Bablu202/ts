@@ -8,7 +8,7 @@ export default async function handler(
   res: NextApiResponse<any>
 ) {
   if (req.method === "GET") {
-    const visitors = await prisma.visitors.findUnique({
+    const visitors = await prisma.visitors.findFirst({
       where: { id: 1 },
     });
     res.status(200).json(visitors);
