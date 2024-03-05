@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
-import imgLogo from "../images/w-s.png";
-import man from "../images/man.png";
+import imgLogo from "../../public/images/w-s.png";
+import man from "../../public/images/man.png";
+import { Count } from "../components/Count";
 
 interface JokeResponse {
   value: string;
@@ -31,13 +32,11 @@ export default function Home() {
 
   const handleJoke = (e: React.MouseEvent<HTMLButtonElement>): void => {
     e.preventDefault();
-
     getResponse();
   };
 
   useEffect(() => {
     getResponse();
-    PrismaCount();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
@@ -62,9 +61,7 @@ export default function Home() {
           {isLoading ? (
             <p className="joke">Loading...</p>
           ) : (
-            <div>
-              <p className="joke">{joke}</p>
-            </div>
+            <p className="joke">&rdquo;{joke}&ldquo;</p>
           )}
           <div className="flex justify-center md:justify-normal py-4">
             <button
@@ -77,9 +74,11 @@ export default function Home() {
         </div>
       </div>
       <footer className="border-t-black/40 border-[1px] py-4 text-center ">
-        <p>Number of Visitors are</p>
+        <div className="flex flex-r justify-center">
+          <p>Number of Visitors are </p>
+          <Count />
+        </div>
       </footer>
-      <Count />
     </div>
   );
 }
