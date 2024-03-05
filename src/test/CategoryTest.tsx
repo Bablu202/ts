@@ -2,7 +2,7 @@ import { useJoke } from "@/contexts/JokeProvider";
 import React, { useEffect, useState } from "react";
 
 export default function CategoryTest() {
-  const { randomCategory, setRandomCategory, isLoading } = useJoke();
+  const { setRandomCategory, isLoading } = useJoke();
 
   const [jokeObjectCategory, setJokeObjectCategory] = useState<string>("fun");
 
@@ -17,16 +17,13 @@ export default function CategoryTest() {
   const pickCategory = (arr: string[]) =>
     arr[Math.floor(Math.random() * arr.length)];
 
-  console.log(jokeObjectCategory);
-
   useEffect(() => {
-    setRandomCategory(
-      pickCategory(
-        jokeCategory[jokeObjectCategory ? jokeObjectCategory : "fun"]
-      )
-    );
-  }, [isLoading]);
+    if (jokeObjectCategory) {
+      setRandomCategory(pickCategory(jokeCategory[jokeObjectCategory]));
 
+      console.log(pickCategory(jokeCategory[jokeObjectCategory]));
+    }
+  }, [isLoading]);
   return (
     <div className="flex  justify-end items-center p-1 border-b border-gray-500 border-solid lg:mt-10">
       <label className="text-gray-500 font-bold  pr-5" htmlFor="category">

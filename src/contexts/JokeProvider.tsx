@@ -17,7 +17,7 @@ export const RandomJokeProvider = ({
     setIsLoading(true);
     try {
       let category = randomCategory ? `category=${randomCategory}` : "";
-      console.log(category);
+      console.log("55 -", category);
       let endpoint: string = `https://api.chucknorris.io/jokes/random?${category}`;
       let response = await fetch(endpoint);
       let json: JokeResponse = await response.json();
