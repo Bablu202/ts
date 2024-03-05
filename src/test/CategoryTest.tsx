@@ -28,9 +28,15 @@ export default function CategoryTest() {
   }, [isLoading]);
 
   return (
-    <div className="flex justify-end  p-1 border-b border-gray-500 border-solid lg:mt-10">
-      <label htmlFor="category">Category:</label>
+    <div className="flex  justify-end items-center p-1 border-b border-gray-500 border-solid lg:mt-10">
+      <label className="text-gray-500 font-bold  pr-5" htmlFor="category">
+        Category:
+      </label>
       <select
+        className="appearance-none border border-gray-500 
+        rounded-md shadow-sm text-base
+         focus:outline-none focus:ring-gray-500
+          focus:border-gray-500 sm:text-sm"
         name="jokes"
         id="category"
         onChange={(e: any) => {
@@ -38,7 +44,11 @@ export default function CategoryTest() {
         }}
       >
         {Object.keys(jokeCategory).map((key) => (
-          <option key={key} value={key}>
+          <option
+            className="bg-gray-500 text-white pr-6 outline-none"
+            key={key}
+            value={key}
+          >
             {key}
           </option>
         ))}

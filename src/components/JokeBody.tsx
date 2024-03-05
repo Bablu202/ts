@@ -11,7 +11,7 @@ const JokeBody = () => {
       </div>
 
       <div className="flex flex-1 flex-col lg:flex-1">
-        <div className=" lg:mt-10 justify-end ">
+        <div className=" lg:mt-10 justify-end pr-5">
           <CategoryTest />
         </div>
         <div className=" h-28 overflow-y-auto flex-grow p-2 lg:h-52  ">
